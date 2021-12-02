@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +6,7 @@ import java.util.ArrayList;
 public class Dive {
     public static void main(String[] args) {
         if (args.length == 0) return;
-        int depth = 0, horizontal = 0;
+        int depth = 0, horizontal = 0, aim = 0;
         try {
             BufferedReader bf = new BufferedReader(new FileReader(args[0]));
             ArrayList<Command> commands = new ArrayList<>();
@@ -19,9 +18,11 @@ public class Dive {
             for (Command c : commands) {
                 CommandType type = c.getCommandType();
                 if (type == CommandType.Forward) {
-                    horizontal += c.getValue();
+                    final int value = c.getValue();
+                    horizontal += value;
+                    depth += value * aim;
                 } else {
-                    depth += c.getValue();
+                    aim += c.getValue();
                 }
             }
 
