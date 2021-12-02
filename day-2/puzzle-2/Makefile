@@ -2,4 +2,4 @@ all:
 	javac *.java
 
 run: all
-	java Dive input.txt
+	java Dive ../input.txt
