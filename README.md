@@ -7,3 +7,4 @@ Advent of Code 2021 Solutions
 * General scripting tools (Make)
 * C (GCC)
 * Java (OpenJDK, meaning `javac` and `java`)
+* JavaScript (node)
