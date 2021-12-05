@@ -56,7 +56,6 @@ impl Board {
         if self.won {
             return true;
         }
-        println!("Board-----");
         let rows = self.cells.chunks(5); 
 
         // index * 5 + column
@@ -91,7 +90,6 @@ impl Board {
                 break;
             }
         }
-
         self.won = win;
         win
     }
