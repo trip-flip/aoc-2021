@@ -2,9 +2,14 @@
 Advent of Code 2021 Solutions
 
 ## Languages and dependencies
-*Note: All puzzles were developed on my Linux machine (Arch user btw :^))*
+*All puzzles were developed on my Linux machine (Arch user btw :^))*
 
 * General scripting tools (Make)
 * C (GCC)
 * Java (OpenJDK, meaning `javac` and `java`)
 * JavaScript (node)
+* Rust (cargo)
+
+### Notes:
+* Would've stuck with rustc when I used Rust, however intellisense for VSC
+didn't work without it apparently.
