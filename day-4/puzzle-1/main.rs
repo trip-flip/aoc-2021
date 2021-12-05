@@ -26,7 +26,8 @@ impl Cell {
     }
 }
 struct Board {
-    cells: Vec<Cell>
+    cells: Vec<Cell>,
+    won: bool
 }
 
 impl Board {
@@ -36,7 +37,8 @@ impl Board {
             .map(|value| { Cell::new(*value) })
             .collect();
         Self {
-            cells: cells
+            cells: cells,
+            won: false
         }
     }
 
@@ -49,7 +51,11 @@ impl Board {
         }
     }
 
-    pub fn check_bingo(&self) -> bool {
+    pub fn check_bingo(&mut self) -> bool {
+        if self.won {
+            return true;
+        }
+        println!("Board-----");
         let rows = self.cells.chunks(5); 
 
         // index * 5 + column
@@ -70,9 +76,9 @@ impl Board {
             }
         }
 
-        for i in 0..4 {
-            for j in 0..4 {
-                let index = i * 5 + j;
+        for i in 0..5 { // column number
+            for j in 0..5 { // index of column
+                let index = j * 5 + i;
                 if !self.cells[index].marked() {
                     count = 0;
                     break;
@@ -84,7 +90,7 @@ impl Board {
                 break;
             }
         }
-
+        self.won = win;
         win
     }
 
