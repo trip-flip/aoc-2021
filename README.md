@@ -1,5 +1,5 @@
 # Advent of Code 2021
-Advent of Code 2021 Solutions
+Advent of Code 2021 Solutions (Unfinished)
 
 ## Languages and dependencies
 *All puzzles were developed on my Linux machine (Arch user btw :^))*
